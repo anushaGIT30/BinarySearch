@@ -1,0 +1,63 @@
+BINARY SEARCH:
+real life examples:  having a huge dictionary with words that are alphabetically sorted.
+ Now you would like to find the definition of word "optimal".
+
+--->we are performing a search in the sorted area
+
+coding problem example:
+3 4 6 7 9 12 16 17 n=8
+target=6 output:3
+tc:o(n)
+we take a couple of variables low,high,mid
+
+LOWER BOUND: smallest index such that arr[index]>=x
+ ex: 3, 5, 8,15,19,19,19  n=7
+ let x=8            let x=9          let x=16         if x=20            if x=19
+
+ then lb: 2         then lb:3       then lb: 4         then lb:5(i.e n)    then lb:4
+
+ we can also use the stl method: lb=lower_bound(arr.begin(),arr.end(),x)-arr.begin()
+ tc:o(log2 n)
+
+ UPPER BOUND:smallest index such that arr[index]>x
+ ex: 2, 3,6,7,8,8,11,11,11,12 
+ x=6   x=12 
+ up:3  x=n
+
+ we can also use the stl method: lb=upper_bound(arr.begin(),arr.end(),x)-arr.begin()
+ tc:o(log2 n)
+  
+----search insert position
+//You are given a sorted array 'arr' of distinct values and a target value 'm'.
+
+
+
+You need to search for the index of the target value in the array.
+
+
+
+Note:
+If the value is present in the array, return its index.
+If the value is absent, determine the index where it would be inserted in the array while maintaining the sorted order. 
+
+
+Example:
+Input:  arr = [1, 2, 4, 7],  m = 6 
+
+Output: 3
+
+Explanation: If the given array 'arr' is: [1, 2, 4, 7] and m = 6. We insert m = 6 in the array and get 'arr' as: [1, 2, 4, 6, 7]. The position of 6 is 3 (according to 0-based indexing)
+
+
+----floor and ceil in sorted array
+floor: largest number in the array<=x
+ 
+ceil:smallest number in the array>=x
+
+ex: 10,20,30,40,50
+x: 25
+floor: 20
+ceil:  30
+ex: 10,20,25,30,40
+floor:25
+ceil:25
